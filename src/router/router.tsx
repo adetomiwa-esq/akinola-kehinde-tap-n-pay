@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Login from "../pages/Login/Login";
 
 const router = createBrowserRouter([
     {
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <h1>Login</h1>
+                element: <Login />
             }
         ]
     }
