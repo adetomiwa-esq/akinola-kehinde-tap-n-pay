@@ -22,8 +22,8 @@ function Login() {
                 <form action="" className='mb-5'>
                     <div className="mb-14">
                         <label htmlFor="" className="text-[#191919] text-xs leading-[150%] inline-block mb-2">Mobile number</label>
-                        <div className="flex border rounded-sm p-3 h-11.25 border-[#E1E3ED] text-[#000000]">
-                            <select name="" id="" className="w-28 text-sm leading-[150%]">
+                        <div className="flex border rounded-sm p-3 h-11.25 border-[#E1E3ED] text-[#000000] text-sm">
+                            <select name="" id="" className="w-28 leading-[150%]">
                                 <option value="">+962</option>
                             </select>
                             <input type="text" placeholder='7X-XXXXXXX' name="" id="" className='placeholder-[#BAC2C7] outline-none' />
