@@ -6,6 +6,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sora: ["Sora", "sans-serif"],
+    },
     screens: {
       sm: "375px",
       md: "768px",

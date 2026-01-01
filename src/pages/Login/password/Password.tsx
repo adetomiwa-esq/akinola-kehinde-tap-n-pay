@@ -1,9 +1,11 @@
-import {} from 'react'
+import { useState } from 'react'
 import logo from "../../../assets/images/logo-purple.svg"
 import shield from "../../../assets/images/shield.svg"
 import eyeLine from "../../../assets/images/eye-off-line.svg"
+import ForgotPasswordModal from './ForgotPasswordModal'
 
 function Password() {
+    const [displayModal, setDisplayModal] = useState(false)
   return (
     <main className=''>
         <div className="md:flex md:h-screen md:bg-[#F7F4FF] md:min-h-fit">
@@ -31,12 +33,16 @@ function Password() {
                         </div>
                     </div>
 
-                    <div className="w-fit ml-auto text-[#1D62CA] font-semibold text-sm leading-[150%] cursor-pointer" role='button'>Forgot password?</div>
+                    <div className="w-fit ml-auto text-[#1D62CA] font-semibold text-sm leading-[150%] cursor-pointer" role='button' onClick={() => {
+                        setDisplayModal(true)
+                    }}>Forgot password?</div>
 
                     <button type="submit" className="absolute bottom-0 left-0 w-full bg-[#5732BF] rounded-sm p-3 text-[#FFFFFF] font-semibold text-sm leading-[150%] cursor-pointer">Login</button>
                 </form>
             </div>
         </div>
+
+        <ForgotPasswordModal displayModal={displayModal} setDisplayModal={setDisplayModal} />
     </main>
   )
 }
