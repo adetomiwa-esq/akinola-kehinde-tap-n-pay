@@ -1,21 +1,31 @@
 import { createBrowserRouter } from "react-router-dom";
-import Login from "../pages/Login/Login";
-import Password from "../pages/Login/password/Password";
-import Home from "../pages/Home/Home";
-import ProfileSettings from "../pages/ProfileSettings/ProfileSettings";
+import { lazy, Suspense } from "react"
+import LazyLoader from "../components/LazyLoader";
+const Home = lazy(() => import("../pages/Home/Home"))
+const ProfileSettings = lazy(() => import("../pages/ProfileSettings/ProfileSettings"))
+const Login = lazy(() => import("../pages/Login/Login"))
+const Password = lazy(() => import("../pages/Login/password/Password"))
+const Otp = lazy(() => import("../pages/Login/otp/Otp"))
+const Register = lazy(() => import("../pages/Register/Register"))
 // import History from "../pages/History/History";
-import Register from "../pages/Register/Register";
-import Otp from "../pages/Login/otp/Otp";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />
+        element: (
+            <Suspense fallback={<LazyLoader />}>
+                <Home />
+            </Suspense>
+        )
     },
 
     {
         path: "/profile-settings",
-        element: <ProfileSettings />
+        element: (
+            <Suspense fallback={<LazyLoader />}>
+                <ProfileSettings />
+            </Suspense>
+        )
     },
 
     // {
@@ -28,22 +38,38 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Login />
+                element: (
+                    <Suspense fallback={<LazyLoader />}>
+                        <Login />
+                    </Suspense>
+                )
             },
             {
                 path: "password",
-                element: <Password />
+                element: (
+                    <Suspense fallback={<LazyLoader />}>
+                        <Password />
+                    </Suspense>
+                )
             },
             {
                 path: "otp",
-                element: <Otp />
+                element: (
+                <Suspense fallback={<LazyLoader />}>
+                    <Otp />
+                </Suspense>
+            )
             }
         ]
     },
 
     {
         path: "/register",
-        element: <Register />
+        element: (
+            <Suspense fallback={<LazyLoader />}>
+                <Register />
+            </Suspense>
+        )
     }
 ])
 
