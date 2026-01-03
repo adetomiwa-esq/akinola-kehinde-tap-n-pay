@@ -3,6 +3,7 @@ import logo from "../../../assets/images/logo-purple.svg"
 import shield from "../../../assets/images/shield.svg"
 import eyeLine from "../../../assets/images/eye-off-line.svg"
 import ForgotPasswordModal from './ForgotPasswordModal'
+// @ts-expect-error 3rd party package has been installed
 import zxcvbn from "zxcvbn"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -89,7 +90,7 @@ function Password() {
                         </div>
 
                         {errors.password && (
-                <p className="text-red-500 text-xs mt-2">
+                <p className="text-[#B83232] text-xs mt-2">
                   {errors.password.message}
                 </p>
               )}

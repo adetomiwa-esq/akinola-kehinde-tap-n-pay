@@ -76,7 +76,7 @@ function Login() {
                             <input {...register("phone")} type="text" placeholder='7X-XXXXXXX' className='placeholder-[#BAC2C7] outline-none' />
                         </div>
                         {errors.phone && (
-                        <p className="text-red-500 text-xs mt-2">
+                        <p className="text-[#B83232] text-xs mt-2">
                         {errors.phone.message}
                         </p>
                     )}
