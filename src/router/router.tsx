@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react"
 import LazyLoader from "../components/LazyLoader";
+import MainLayout from "../layouts/MainLayout";
 const Home = lazy(() => import("../pages/Home/Home"))
 const ProfileSettings = lazy(() => import("../pages/ProfileSettings/ProfileSettings"))
 const Login = lazy(() => import("../pages/Login/Login"))
@@ -12,21 +13,29 @@ const Register = lazy(() => import("../pages/Register/Register"))
 const router = createBrowserRouter([
     {
         path: "/",
-        element: (
-            <Suspense fallback={<LazyLoader />}>
-                <Home />
-            </Suspense>
-        )
+        element: <MainLayout />,
+        children: [
+            {
+                index: true,
+                element: (
+                    <Suspense fallback={<LazyLoader />}>
+                        <Home />
+                    </Suspense>
+                )
+            },
+
+            {
+                path: "profile-settings",
+                element: (
+                    <Suspense fallback={<LazyLoader />}>
+                        <ProfileSettings />
+                    </Suspense>
+                )
+            },
+        ]
     },
 
-    {
-        path: "/profile-settings",
-        element: (
-            <Suspense fallback={<LazyLoader />}>
-                <ProfileSettings />
-            </Suspense>
-        )
-    },
+    
 
     // {
     //     path: "/history",
