@@ -39,7 +39,8 @@ export const transactionHistory = {
         img: "./accountsIcon/Wallmart.png",
       },
       createdAt: new Date().toISOString(),
-      date: "Today"
+      date: "Today",
+      time: "02:12"
     },
 
     {
@@ -53,7 +54,8 @@ export const transactionHistory = {
         img: "./accountsIcon/Topup.png",
       },
       createdAt: new Date().toISOString(),
-      date: "Today"
+      date: "Today",
+      time: "01:30"
     },
 
     {
@@ -67,11 +69,12 @@ export const transactionHistory = {
         img: "./accountsIcon/Netflix.png",
       },
       createdAt: new Date().toISOString(),
-      date: "Today"
+      date: "Today",
+      time: "02:40"
     },
 
     {
-      id: "tx_103",
+      id: "tx_104",
       amount: 35.23,
       currency: "$",
       type: "transfer",
@@ -81,11 +84,12 @@ export const transactionHistory = {
         img: "./accountsIcon/Netflix.png",
       },
       createdAt: new Date().toISOString(),
-      date: "Today"
+      date: "Today",
+      time: "04:40"
     },
 
     {
-      id: "tx_102",
+      id: "tx_105",
       amount: 220.12,
       currency: "$",
       type: "topup",
@@ -95,51 +99,92 @@ export const transactionHistory = {
         img: "./accountsIcon/Topup.png",
       },
       createdAt: new Date().toISOString(),
-      date: "Today"
+      date: "Today",
+      time: "12:30"
     },
   ],
 
   yesterday: [
     {
-      id: "tx_102",
+      id: "tx_106",
       amount: 430.00,
-      currency: "$",
-      type: "topup",
-      status: "success",
-      receiver: {
-        name: "Top up",
-        img: "Wallet Balance",
-      },
-      createdAt: new Date(
-        Date.now() - 24 * 60 * 60 * 1000
-      ).toISOString(),
-    },
-  ],
-
-  earlier: [
-    {
-      id: "tx_103",
-      amount: 13.00,
       currency: "$",
       type: "transfer",
       status: "success",
       receiver: {
         name: "Amazon",
-        img: "Wallet Balance",
+        img: "./accountsIcon/amazon.png",
       },
-      createdAt: "2025-01-05T14:32:00.000Z",
+      createdAt: new Date(
+        Date.now() - 24 * 60 * 60 * 1000
+      ).toISOString(),
+      date: "yesterday",
+      time: "12:30"
     },
+
     {
-      id: "tx_104",
-      amount: 10000,
-      currency: "NGN",
+      id: "tx_107",
+      amount: 26.00,
+      currency: "$",
       type: "transfer",
       status: "success",
       receiver: {
-        name: "My Wallet",
-        account: "Wallet Balance",
+        name: "Nike",
+        img: "./accountsIcon/Nike.png",
+      },
+      createdAt: new Date(
+        Date.now() - 24 * 60 * 60 * 1000
+      ).toISOString(),
+      date: "yesterday",
+      time: "11:00"
+    },
+
+    {
+      id: "tx_108",
+      amount: 26.00,
+      currency: "$",
+      type: "topup",
+      status: "success",
+      receiver: {
+        name: "Top up",
+        img: "./accountsIcon/Topup.png",
+      },
+      createdAt: new Date(
+        Date.now() - 24 * 60 * 60 * 1000
+      ).toISOString(),
+      date: "yesterday",
+      time: "09:00"
+    },
+  ],
+
+  earlier: [
+    {
+      id: "tx_109",
+      amount: 123.44,
+      currency: "$",
+      type: "transfer",
+      status: "success",
+      receiver: {
+        name: "The Home Depot",
+        img: "./accountsIcon/homedepot.png",
+      },
+      createdAt: "2025-01-05T14:32:00.000Z",
+      date: "Dec 31",
+      time: "05:00"
+    },
+    {
+      id: "tx_104",
+      amount: 50.22,
+      currency: "$",
+      type: "transfer",
+      status: "success",
+      receiver: {
+        name: "Amazon",
+        img: "./accountsIcon/amazon.png",
       },
       createdAt: "2025-01-03T09:15:00.000Z",
+      date: "Jan 1",
+      time: "09:00"
     },
   ],
 }
