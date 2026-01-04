@@ -10,7 +10,7 @@ function History() {
     const [displayModal, setDisplayModal] = useState(false)
 
     const [selectedtx, setSelectedTx] = useState({
-        img: "",
+        img: "/",
         name: "",
         amount: 0,
         currency: "",
@@ -75,7 +75,7 @@ function History() {
                         
                         {
                             transactions.filter(y => transactionType === "received" ? y.type === "topup" : transactionType === "sent" ? y.type === "transfer" : y).filter(x => searchInput.length > 0 ? x.receiver.name.toLowerCase().includes(searchInput.toLocaleLowerCase()) : x).map(transaction => (
-                                <div className='flex mb-3 justify-between border-b border-[#EDEFF6] pb-3 pt-1 last:border-b-0' id={transaction.id} onClick={() => {
+                                <div className='flex mb-3 justify-between border-b border-[#EDEFF6] pb-3 pt-1 last:border-b-0' key={transaction.id} id={transaction.id} onClick={() => {
                                     setDisplayModal(true)
                                     setSelectedTx({
                                             img: transaction.receiver.img,

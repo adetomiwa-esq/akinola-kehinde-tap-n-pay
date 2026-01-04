@@ -1,11 +1,39 @@
-import {} from 'react';
+import { useEffect, useState } from 'react';
 import pp from "../../assets/images/profile-p1.png";
 import settings from "../../assets/images/settings.svg"
 import topUp from "../../assets/images/upload-line.svg"
 import withdraw from "../../assets/images/withdraw-line.svg"
 import transfer from "../../assets/images/transfer.svg"
+import { Link } from 'react-router-dom';
 
+
+const TARGET_AMOUNT = 14235.84
+const DURATION = 1200
 function MainBalance() {
+
+    const [amount, setAmount] = useState(0)
+
+    useEffect(() => {
+    let start: number | null = null
+
+    const animate = (timestamp: number) => {
+      if (!start) start = timestamp
+
+      const progress = Math.min((timestamp - start) / DURATION, 1)
+      const value = TARGET_AMOUNT * progress
+
+      setAmount(Number(value.toFixed(2)))
+
+      if (progress < 1) {
+        requestAnimationFrame(animate)
+      }
+    }
+
+    requestAnimationFrame(animate)
+  }, [])
+
+  console.log(amount.toString().split(".")[1]);
+  
   return (
     <section className="bg-[#270685] text-[#FFFFFF] px-4 pt-8 pb-6 leading-[150%] tracking-[0%] ">
         <div className="flex justify-between mb-6 sticky top-0 left-0 bg-[#270685] py-4 z-20">
@@ -17,13 +45,13 @@ function MainBalance() {
                 </div>
             </div>
 
-            <img src={settings} alt="icon" className='w-6 h-6' />
+            <Link to="/profile-settings"><img src={settings} alt="icon" className='w-6 h-6' /></Link>
         </div>
 
         <div className="bg-[linear-gradient(229.57deg,_#5033A4_-0.79%,_rgba(51,16,152,0.65)_73%)] rounded-2xl py-6 px-8">
             <h6 className="text-[#B2A1E4] text-sm text-center mb-3">Main balance</h6>
 
-            <h2 className="font-semibold text-4xl text-center mb-6">$14,235<span className='text-[18px] font-normal'>.34</span></h2>
+            <h2 className="font-semibold text-4xl text-center mb-6">${amount.toLocaleString(undefined, { minimumFractionDigits: 2 }).split(".")[0]}<span className='text-[18px] font-normal'>.{amount.toString().split(".")[1]}</span></h2>
 
             <div className="flex">
                 <div className="w-1/3 flex flex-col items-center gap-2">

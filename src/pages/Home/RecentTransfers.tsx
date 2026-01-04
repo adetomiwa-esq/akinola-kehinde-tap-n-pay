@@ -5,6 +5,13 @@ import { Link } from 'react-router-dom'
 import right from "../../assets/images/right.svg"
 
 function RecentTransfers() {
+    
+    const [firstSectionName, firstTransactions] = Object.entries(transactionHistory)[0]
+
+
+    console.log(firstSectionName);
+    
+    
   return (
     <section className="bg-[#FFFFFF] text-[#191919] leading-[150%] tracking-[0%] pt-7">
         <h4 className="text-sm font-semibold px-4 mb-5">Recent Transfers</h4>
@@ -25,22 +32,22 @@ function RecentTransfers() {
             }
         </div>
 
-        <div className="px-4 py-5">
+        <div className="px-4 pt-5">
             <div className="flex justify-between items-center mb-5">
                 <h4 className="text-sm font-semibold">Latest Transactions</h4>
 
-                <Link to="" className='text-[#6B6B6B] text-xs'>View all</Link>
+                <Link to="/history" className='text-[#6B6B6B] text-xs'>View all</Link>
             </div>
 
             <div className="">
-                {
-                    transactionHistory.today.map(transaction => (
-                        <Link className='flex mb-3 justify-between border-b border-[#EDEFF6] py-2' to="" id={transaction.id}>
+                { 
+                    firstTransactions.map(transaction => (
+                        <Link className='flex mb-3 justify-between border-b border-[#EDEFF6] py-2' key={transaction.id} to="/history">
                             <div className="flex items-center gap-2">
                                 <img src={transaction.receiver.img} alt="" className='w-8 h-8' />
                                 <div className="">
                                     <h6 className="font-semibold text-xs">{transaction.receiver.name}</h6>
-                                    <p className="text-xs text-[#78838D]">{transaction.date}</p>
+                                    <p className="text-xs text-[#78838D]">{transaction.date} {transaction.time}</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">
