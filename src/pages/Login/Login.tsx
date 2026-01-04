@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { MobileSchema } from '../../validation/auth.schema'
 import { z } from "zod"
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import jordan from "../../assets/images/Jordan.svg"
 import down from "../../assets/images/down.svg"
 import { Loader } from 'lucide-react'
@@ -35,19 +35,19 @@ function Login() {
     const onSubmit = (data: MobileFormData) => {
     // Save phone for next step
 
-    if(!errors.phone){
-        setIsLoading(true)
+        if(!errors.phone){
+            setIsLoading(true)
 
-        setTimeout(() => {
-            sessionStorage.setItem("login_phone", data.phone)
+            setTimeout(() => {
+                sessionStorage.setItem("user", data.phone)
 
-            // Go to password page
-            navigate("/login/password")
-            setIsLoading(false)
-        }, 1500)
-    }
+                // Go to password page
+                navigate("/login/password")
+                setIsLoading(false)
+            }, 1500)
+        }
     
-  }
+    }
 
 
   return (
@@ -104,6 +104,8 @@ function Login() {
                         <img src={apple} alt="icon" className="" />
                     </button>
                 </div>
+
+                <p className="text-sm mt-3 text-center">Don't have an account? <Link className='text-[#5732BF] font-semibold' to="/register">Register</Link></p>
             </div>
         </div>
     </main>

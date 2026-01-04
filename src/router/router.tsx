@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react"
 import LazyLoader from "../components/LazyLoader";
 import MainLayout from "../layouts/MainLayout";
+import ProtectedRoute from "./ProtectedRoute";
 const Home = lazy(() => import("../pages/Home/Home"))
 const ProfileSettings = lazy(() => import("../pages/ProfileSettings/ProfileSettings"))
 const Login = lazy(() => import("../pages/Login/Login"))
@@ -13,32 +14,10 @@ const History = lazy(() => import("../pages/History/History"))
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <MainLayout />,
+        element: <ProtectedRoute />,
         children: [
             {
-                index: true,
-                element: (
-                    <Suspense fallback={<LazyLoader />}>
-                        <Home />
-                    </Suspense>
-                )
-            },
-
-
-            {
-                path: "history",
-                element: (
-                    <Suspense fallback={<LazyLoader />}>
-                        <History />
-                    </Suspense>
-                )
-            },
-        ]
-    },
-
-    {
-                path: "profile-settings",
+                path: "/profile-settings",
                 element: (
                     <Suspense fallback={<LazyLoader />}>
                         <ProfileSettings />
@@ -46,6 +25,35 @@ const router = createBrowserRouter([
                 )
             },
 
+            {
+                path: "/",
+                element: <MainLayout />,
+                children: [
+                    {
+                        index: true,
+                        element: (
+                            <Suspense fallback={<LazyLoader />}>
+                                <Home />
+                            </Suspense>
+                        )
+                    },
+
+
+                    {
+                        path: "history",
+                        element: (
+                            <Suspense fallback={<LazyLoader />}>
+                                <History />
+                            </Suspense>
+                        )
+                    },
+                ]
+
+            }
+
+        ]
+    },
+        
 
     {
         path: "/login",

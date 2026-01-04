@@ -43,7 +43,7 @@ function Register() {
     const [agreeToTerms, setAgreeToTerms] = useState(false)
     const [agreementError, setAgreementError] = useState("")
 
-    const onSubmit = () => {
+    const onSubmit = (data: RegisterFormData) => {
 
         if(!agreeToTerms){
             setAgreementError("Terms and conditions must be accepted to proceed")
@@ -56,9 +56,11 @@ function Register() {
                 setIsLoading(true)
     
                 setTimeout(() => {
+
+                    sessionStorage.setItem("user", data.email)
     
                     // Go to password page
-                    navigate("/login")
+                    navigate("/")
                     setIsLoading(false)
                 }, 1500)
             }
@@ -189,6 +191,8 @@ function Register() {
                         <img src={apple} alt="icon" className="" />
                     </button>
                 </div>
+
+                <p className="text-sm mt-3 text-center">Already have an account? <Link className='text-[#5732BF] font-semibold' to="/login">Login</Link></p>
             </div>
         </div>
     </main>

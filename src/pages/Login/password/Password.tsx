@@ -22,7 +22,7 @@ function Password() {
     const [displayModal, setDisplayModal] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
 
-    const phone = sessionStorage.getItem("login_phone")
+    const phone = sessionStorage.getItem("user")
 
     // Redirect if step 1 was skipped
     useEffect(() => {
