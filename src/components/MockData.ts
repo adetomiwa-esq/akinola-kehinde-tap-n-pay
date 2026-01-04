@@ -157,7 +157,7 @@ export const transactionHistory = {
     },
   ],
 
-  earlier: [
+  wednesday: [
     {
       id: "tx_109",
       amount: 123.44,
@@ -169,7 +169,7 @@ export const transactionHistory = {
         img: "./accountsIcon/homedepot.png",
       },
       createdAt: "2025-01-05T14:32:00.000Z",
-      date: "Dec 31",
+      date: "Dec 31, 2025",
       time: "05:00"
     },
     {
@@ -183,7 +183,7 @@ export const transactionHistory = {
         img: "./accountsIcon/amazon.png",
       },
       createdAt: "2025-01-03T09:15:00.000Z",
-      date: "Jan 1",
+      date: "December 31, 2025",
       time: "09:00"
     },
   ],

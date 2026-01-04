@@ -12,13 +12,13 @@ import more from "../assets/images/more.svg"
 function Navigation() {
   return (
     <div className='leading-[150%] tracking-[0%]'>
-        <aside className="fixed w-full h-15.5 bottom-0 left-0 bg-[#FFFFFF] z-50 text-xs ">
-            <ul className="flex">
+        <aside className="fixed w-full h-15.5 bottom-0 left-0 bg-[#FFFFFF] z-30 text-xs ">
+            <ul className="flex h-full">
                 <li className="flex-1 h-full">
                     <NavLink
                         to="/"
                         end
-                        className={({isActive}) => `flex items-center justify-center h-full flex-col gap-1 ${isActive ? "text-[#6F45E9]" : "text-[#535D66]"}`}
+                        className={({isActive}) => `flex items-center justify-center h-full flex-col gap-0.5 ${isActive ? "text-[#6F45E9]" : "text-[#535D66]"}`}
                     >
                         {({isActive}) => (
                             <>
@@ -34,7 +34,7 @@ function Navigation() {
                     <NavLink
                         to="/history"
                         end
-                        className={({isActive}) => `h-full flex items-center justify-center flex-col gap-1 ${isActive ? "text-[#6F45E9]" : "text-[#535D66]"}`}
+                        className={({isActive}) => `h-full flex items-center justify-center flex-col gap-0.5 ${isActive ? "text-[#6F45E9]" : "text-[#535D66]"}`}
                     >
                         {({isActive}) => (
                             <>
@@ -50,7 +50,7 @@ function Navigation() {
                     <NavLink
                         to="/cards"
                         end
-                        className={({isActive}) => `h-full flex items-center justify-center flex-col gap-1 ${isActive ? "text-[#6F45E9]" : "text-[#535D66]"}`}
+                        className={({isActive}) => `h-full flex items-center justify-center flex-col gap-0.5 ${isActive ? "text-[#6F45E9]" : "text-[#535D66]"}`}
                     >
                         {({isActive}) => (
                             <>
@@ -66,7 +66,7 @@ function Navigation() {
                     <NavLink
                         to="/more"
                         end
-                        className={({isActive}) => `h-full flex items-center justify-center flex-col gap-1 ${isActive ? "text-[#6F45E9]" : "text-[#535D66]"}`}
+                        className={({isActive}) => `h-full flex items-center justify-center flex-col gap-0.5 ${isActive ? "text-[#6F45E9]" : "text-[#535D66]"}`}
                     >
                         {({isActive}) => (
                             <>

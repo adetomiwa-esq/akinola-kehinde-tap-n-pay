@@ -8,7 +8,8 @@ const Login = lazy(() => import("../pages/Login/Login"))
 const Password = lazy(() => import("../pages/Login/password/Password"))
 const Otp = lazy(() => import("../pages/Login/otp/Otp"))
 const Register = lazy(() => import("../pages/Register/Register"))
-// import History from "../pages/History/History";
+const History = lazy(() => import("../pages/History/History"))
+
 
 const router = createBrowserRouter([
     {
@@ -32,15 +33,18 @@ const router = createBrowserRouter([
                     </Suspense>
                 )
             },
+
+            {
+                path: "history",
+                element: (
+                    <Suspense fallback={<LazyLoader />}>
+                        <History />
+                    </Suspense>
+                )
+            },
         ]
     },
 
-    
-
-    // {
-    //     path: "/history",
-    //     element: <History />
-    // },
 
     {
         path: "/login",
