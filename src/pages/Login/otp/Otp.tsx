@@ -75,7 +75,7 @@ const resetMethod: ResetMethod | null = stored
 
 
   return (
-    <main className=" mx-auto pt-9 min-h-svh flex flex-col justify-between bg-[#FFFFFF] leading-[150%] tracking-[0%]">
+    <main className=" mx-auto pt-9 min-h-svh flex flex-col justify-between bg-[#FFFFFF] leading-[150%] md: tracking-[0%]">
       <div className="text-center mb-14">
         <div className="w-full flex items-center justify-between px-2 mb-10">
             <Link to="/login/password" className='flex gap-2 text-[#1D62CA] text-sm font-semibold'>
@@ -125,8 +125,8 @@ const resetMethod: ResetMethod | null = stored
         {/* {!secondsLeft && <p className="text-xs text-[#B83232]">Code expired reset code</p>} */}
       </div>
 
-      {/* KEYPAD */}
-    <div className="shadow-[0px_-6px_24px_0px_#00000014] px-4 pt-7 pb-8 h-100">
+      
+    <div className="shadow-[0px_-6px_24px_0px_#00000014] px-4 pt-7 pb-8 h-100 md:w-[600px] mx-auto">
         <div className="w-full grid grid-cols-3 auto-rows-[66.75px] gap-x-6 text-center ">
             {[1,2,3,4,5,6,7,8,9].map((num) => (
             <button
@@ -139,10 +139,8 @@ const resetMethod: ResetMethod | null = stored
             </button>
             ))}
 
-            {/* EMPTY */}
             <div />
 
-            {/* ZERO */}
             <button
             onClick={() => handleNumberClick("0")}
             className="text-xl font-semibold py-4 rounded-md active:bg-gray-200" disabled={secondsLeft == 0}
@@ -150,7 +148,6 @@ const resetMethod: ResetMethod | null = stored
             0
             </button>
 
-            {/* BACKSPACE */}
             <button
             onClick={handleBackspace}
             className="text-xl font-semibold py-4 rounded-md active:bg-gray-200 flex items-center justify-center"
@@ -166,8 +163,6 @@ const resetMethod: ResetMethod | null = stored
             {verifying ? <Loader className='spinner inline' /> : "Done"}
         </button>
     </div>
-
-      {/* DONE BUTTON */}
       
     </main>
   )
