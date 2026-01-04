@@ -16,7 +16,7 @@ function RecentTransfers() {
     <section className="bg-[#FFFFFF] text-[#191919] leading-[150%] tracking-[0%] pt-7">
         <h4 className="text-sm font-semibold px-4 mb-5">Recent Transfers</h4>
 
-        <div className="flex gap-4 items-center overflow-auto text-center text-xs pl-4 w-full">
+        <div className="flex gap-4 items-center overflow-auto text-center text-xs pl-4 w-full no-scrollbar">
             <div className="cursor-pointer">
                 <img src={Add} alt="icon" className='w-16 min-w-16 h-16 block mb-1.5' />
                 <p>Add</p>
@@ -42,7 +42,7 @@ function RecentTransfers() {
             <div className="">
                 { 
                     firstTransactions.map(transaction => (
-                        <Link className='flex mb-3 justify-between border-b border-[#EDEFF6] py-2' key={transaction.id} to="/history">
+                        <Link className='flex mb-3 justify-between border-b last:border-b-0 border-[#EDEFF6] py-2' key={transaction.id} to="/history">
                             <div className="flex items-center gap-2">
                                 <img src={transaction.receiver.img} alt="" className='w-8 h-8' />
                                 <div className="">

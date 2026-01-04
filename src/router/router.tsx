@@ -25,14 +25,6 @@ const router = createBrowserRouter([
                 )
             },
 
-            {
-                path: "profile-settings",
-                element: (
-                    <Suspense fallback={<LazyLoader />}>
-                        <ProfileSettings />
-                    </Suspense>
-                )
-            },
 
             {
                 path: "history",
@@ -44,6 +36,15 @@ const router = createBrowserRouter([
             },
         ]
     },
+
+    {
+                path: "profile-settings",
+                element: (
+                    <Suspense fallback={<LazyLoader />}>
+                        <ProfileSettings />
+                    </Suspense>
+                )
+            },
 
 
     {
