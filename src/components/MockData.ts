@@ -173,7 +173,7 @@ export const transactionHistory = {
       time: "05:00"
     },
     {
-      id: "tx_104",
+      id: "tx_110",
       amount: 50.22,
       currency: "$",
       type: "transfer",
@@ -181,6 +181,36 @@ export const transactionHistory = {
       receiver: {
         name: "Amazon",
         img: "./accountsIcon/amazon.png",
+      },
+      createdAt: "2025-01-03T09:15:00.000Z",
+      date: "December 31, 2025",
+      time: "09:00"
+    },
+
+    {
+      id: "tx_111",
+      amount: 30.22,
+      currency: "$",
+      type: "transfer",
+      status: "success",
+      receiver: {
+        name: "Nike",
+        img: "./accountsIcon/Nike.png",
+      },
+      createdAt: "2025-01-03T09:15:00.000Z",
+      date: "December 31, 2025",
+      time: "09:00"
+    },
+
+    {
+      id: "tx_112",
+      amount: 30.22,
+      currency: "$",
+      type: "transfer",
+      status: "success",
+      receiver: {
+        name: "Walmart",
+        img: "./accountsIcon/Wallmart.png",
       },
       createdAt: "2025-01-03T09:15:00.000Z",
       date: "December 31, 2025",

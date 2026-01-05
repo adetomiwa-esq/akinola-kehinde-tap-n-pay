@@ -32,7 +32,6 @@ function MainBalance() {
     requestAnimationFrame(animate)
   }, [])
 
-  console.log(amount.toString().split(".")[1]);
   
   return (
     <section className="bg-[#270685] text-[#FFFFFF] px-4 pt-8 pb-6 leading-[150%] tracking-[0%] ">
