@@ -90,7 +90,7 @@ function Register() {
                         <div className="">
                             <label htmlFor="" className="text-xs inline-block mb-3 ">Name</label>
 
-                            <input type="name" {...register("name")} placeholder='e.g. John Doe' id="" className='w-full h-11.25 border border-[#E1E3ED] rounded-sm placeholder-[#BAC2C7] text-sm p-3 outline-none' />
+                            <input type="name" {...register("name")} placeholder='e.g. John Doe' id="" className='w-full h-11.25 border border-[#E1E3ED] rounded-sm placeholder-[#BAC2C7] text-base placeholder:text-sm p-3 outline-none' />
                         </div>
                         {errors.email && (
                             <p className="text-[#B83232] text-xs mt-1">
@@ -103,7 +103,7 @@ function Register() {
                         <div className="">
                             <label htmlFor="" className="text-xs inline-block mb-3 ">Email</label>
 
-                            <input type="email" {...register("email")} placeholder='e.g. email@example.com' id="" className='w-full h-11.25 border border-[#E1E3ED] rounded-sm placeholder-[#BAC2C7] text-sm p-3 outline-none' />
+                            <input type="email" {...register("email")} placeholder='e.g. email@example.com' id="" className='w-full h-11.25 border border-[#E1E3ED] rounded-sm placeholder-[#BAC2C7] text-base placeholder:text-sm p-3 outline-none' />
                         </div>
                         {errors.email && (
                             <p className="text-[#B83232] text-xs mt-1">
@@ -119,7 +119,7 @@ function Register() {
                                 type={showPassword ? "text" : "password"}
                                 {...register("password")}
                                 placeholder='Enter your password'
-                                className='placeholder-[#BAC2C7] outline-none border rounded-sm p-3 h-11.25 border-[#E1E3ED] w-full text-sm' />
+                                className='placeholder-[#BAC2C7] outline-none border rounded-sm p-3 h-11.25 border-[#E1E3ED] w-full text-base placeholder:text-sm' />
                             <span role='button' className='absolute top-1/2 cursor-pointer -translate-y-1/2 right-3' onClick={() => setShowPassword((prev) => !prev)}>
                                 { showPassword ? <Eye className='w-[18.03px] h-[21.68px] opacity-70' /> :
                                     <img src={eyeLine} alt="icon" className='w-[18.03px] h-[17.68px]' />

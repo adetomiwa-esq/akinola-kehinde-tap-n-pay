@@ -98,7 +98,7 @@ function ForgotPasswordModal({displayModal, setDisplayModal}: Props) {
                         <div className="">
                             <label htmlFor="" className="text-xs inline-block mb-3 ">Email</label>
 
-                            <input type="email" {...register("email")} placeholder='e.g. email@example.com' id="" className='w-full h-11.25 border border-[#E1E3ED] rounded-sm placeholder-[#BAC2C7] text-sm p-3 outline-none' />
+                            <input type="email" {...register("email")} placeholder='e.g. email@example.com' id="" className='w-full h-11.25 border border-[#E1E3ED] rounded-sm placeholder-[#BAC2C7] text-base p-3 outline-none' />
                         </div>
                         {errors.email && (
                             <p className="text-[#B83232] text-xs mt-1">
@@ -127,7 +127,7 @@ function ForgotPasswordModal({displayModal, setDisplayModal}: Props) {
                                     <span>+962</span>
                                     <img src={down} alt="icon" className='w-[8.49px] h-[5.66px]' />
                                 </div>
-                                <input type="text" placeholder='7X-XXXXXXX' {...registerPhone("phone")}  id="" className='placeholder-[#BAC2C7] outline-none' />
+                                <input type="text" placeholder='7X-XXXXXXX' {...registerPhone("phone")}  id="" className='placeholder-[#BAC2C7] outline-none text-base' />
                             </div>
                         </div>
 

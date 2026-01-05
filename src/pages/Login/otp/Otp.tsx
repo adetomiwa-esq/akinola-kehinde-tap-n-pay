@@ -126,7 +126,7 @@ const resetMethod: ResetMethod | null = stored
       </div>
 
       
-    <div className="shadow-[0px_-6px_24px_0px_#00000014] px-4 pt-7 pb-8 h-100 md:w-[600px] mx-auto">
+    <div className="shadow-[0px_-6px_24px_0px_#00000014] px-4 pt-7 pb-8 h-100 md:w-[600px] md:mx-auto">
         <div className="w-full grid grid-cols-3 auto-rows-[66.75px] gap-x-6 text-center ">
             {[1,2,3,4,5,6,7,8,9].map((num) => (
             <button

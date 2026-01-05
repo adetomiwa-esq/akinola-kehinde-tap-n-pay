@@ -73,7 +73,7 @@ function Login() {
                                 <span>+962</span>
                                 <img src={down} alt="icon" className='w-[8.49px] h-[5.66px]' />
                             </div>
-                            <input {...register("phone")} type="text" placeholder='7X-XXXXXXX' className='placeholder-[#BAC2C7] outline-none' />
+                            <input {...register("phone")} type="text" placeholder='7X-XXXXXXX' className='placeholder-[#BAC2C7] outline-none text-base' />
                         </div>
                         {errors.phone && (
                         <p className="text-[#B83232] text-xs mt-2">

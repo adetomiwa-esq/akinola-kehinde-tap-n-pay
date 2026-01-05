@@ -80,7 +80,7 @@ function Password() {
                         <label htmlFor="" className="text-[#191919] text-xs leading-[150%] inline-block mb-2">Password</label>
                         <div className="text-[#000000] relative">
                             <input type={showPassword ? "text" : "password"}
-                  {...register("password")} placeholder='Enter your password' className='placeholder-[#BAC2C7] outline-none border rounded-sm p-3 h-11.25 border-[#E1E3ED] w-full text-sm' />
+                  {...register("password")} placeholder='Enter your password' className='placeholder-[#BAC2C7] outline-none border rounded-sm p-3 h-11.25 border-[#E1E3ED] w-full text-base' />
 
                             <span role='button' className='absolute top-1/2 cursor-pointer -translate-y-1/2 right-3' onClick={() => setShowPassword((prev) => !prev)}>
                                 { showPassword ? <Eye className='w-[18.03px] h-[21.68px] opacity-70' /> :
