@@ -121,7 +121,7 @@ function Register() {
                                 placeholder='Enter your password'
                                 className='placeholder-[#BAC2C7] outline-none border rounded-sm p-3 h-11.25 border-[#E1E3ED] w-full text-sm' />
                             <span role='button' className='absolute top-1/2 cursor-pointer -translate-y-1/2 right-3' onClick={() => setShowPassword((prev) => !prev)}>
-                                { showPassword ? <Eye /> :
+                                { showPassword ? <Eye className='w-[18.03px] h-[21.68px] opacity-70' /> :
                                     <img src={eyeLine} alt="icon" className='w-[18.03px] h-[17.68px]' />
                                 }
                             </span>

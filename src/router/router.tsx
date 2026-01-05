@@ -4,6 +4,7 @@ import LazyLoader from "../components/LazyLoader";
 import MainLayout from "../layouts/MainLayout";
 import ProtectedRoute from "./ProtectedRoute";
 import More from "../pages/More/More";
+import Cards from "../pages/Cards/Cards";
 const Home = lazy(() => import("../pages/Home/Home"))
 const ProfileSettings = lazy(() => import("../pages/ProfileSettings/ProfileSettings"))
 const Login = lazy(() => import("../pages/Login/Login"))
@@ -54,6 +55,15 @@ const router = createBrowserRouter([
                         element: (
                             <Suspense fallback={<LazyLoader />}>
                                 <More />
+                            </Suspense>
+                        )
+                    },
+
+                    {
+                        path: "cards",
+                        element: (
+                            <Suspense fallback={<LazyLoader />}>
+                                <Cards />
                             </Suspense>
                         )
                     },

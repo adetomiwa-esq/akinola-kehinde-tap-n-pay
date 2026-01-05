@@ -51,7 +51,7 @@ function Login() {
 
 
   return (
-    <main className='leading-[150%] tracking-[0%]'>
+    <main className='leading-[150%] tracking-[0%] text-[#191919]'>
         <div className="md:flex md:h-screen md:bg-[#F7F4FF] md:min-h-fit">
             <div className="bg-[#F7F4FF] flex flex-col gap-5 items-center pt-12 h-[50svh] min-h-82.5 md:w-1/2 md:h-full md:overflow-y-auto">
                 <img src={logo} alt="logo" className="w-[88.14px] h-6" />
