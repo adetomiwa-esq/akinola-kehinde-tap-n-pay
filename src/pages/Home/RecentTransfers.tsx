@@ -6,12 +6,6 @@ import right from "../../assets/images/right.svg"
 
 function RecentTransfers() {
     
-    const [firstSectionName, firstTransactions] = Object.entries(transactionHistory)[0]
-
-
-    console.log(firstSectionName);
-    
-    
   return (
     <section className="bg-[#FFFFFF] text-[#191919] leading-[150%] tracking-[0%] pt-7">
         <h4 className="text-sm font-semibold px-4 mb-5">Recent Transfers</h4>
@@ -41,7 +35,7 @@ function RecentTransfers() {
 
             <div className="">
                 { 
-                    firstTransactions.map(transaction => (
+                    Object.values(transactionHistory).flat().slice(0,8).map(transaction => (
                         <Link className='flex mb-3 justify-between border-b last:border-b-0 border-[#EDEFF6] py-2' key={transaction.id} to="/history">
                             <div className="flex items-center gap-2">
                                 <img src={transaction.receiver.img} alt="" className='w-8 h-8' />
