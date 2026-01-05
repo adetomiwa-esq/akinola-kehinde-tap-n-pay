@@ -79,6 +79,7 @@ Redux was not included as this application does not involve complex shared state
 
 The login design does not include a link to the sign up page and so I added it.
 It also took sometime to deside on the data structure to work with for the transactions. I had to work with something that will let me display the transactions just as it is on the design.
+Another challenge faced was mapping through the mock data. I created an object and in the object, transactions are split into objects of array. I had yo use Object.values().flat() when searching or filtering and Object.entries() for default mapping.
 
 🔁 Porting This Project from React to Vue.js
 This project is currently built with React + TypeScript, using concepts such as component-based architecture, routing, lazy loading, and feature separation. These same concepts exist in Vue 3, making the transition very possible.
@@ -110,6 +111,8 @@ This project is currently built with React + TypeScript, using concepts such as 
      │
      ├── pages/
      │    ├── History/
+     |    ├── Cards/(this is a dummy page)
+     |    ├── more/
      │    ├── Home
      |    |── ProfileSettings
      |    |── Register
