@@ -13,12 +13,14 @@ function ProfileSettings() {
   return (
     <main className="text-[#191919] leading-[150%] tracking-[0%] pt-7">
         <div className="flex items-center px-4 mb-10">
-            <Link to="/" className='text-[#1D62CA] font-semibold text-sm flex items-center gap-1'>
+            <Link to="/" className='text-[#1D62CA] font-semibold text-sm flex items-center gap-1 w-12'>
                 <img src={left} alt="icon" />
                 Back
             </Link>
 
             <h3 className="font-semibold m-auto">Profile Settings</h3>
+
+            <div className="w-12"></div>
         </div>
 
         <div className="flex flex-col items-center gap-1 mb-10">
